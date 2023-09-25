@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/zbg3"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="133dp"
+        android:layout_marginBottom="442dp"
+        android:backgroundTint="#5C000000"
+        android:fontFamily="@font/audiowide"
+        android:textColor="#FF0000"
+        android:textStyle="bold"
+        android:textSize="26dp"
+        android:onClick="about"
+        android:text="ABOUT"/>
+
+    <Button
+        android:id="@+id/fare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="47dp"
+        android:layout_marginBottom="198dp"
+        android:backgroundTint="#5C000000"
+        android:fontFamily="@font/audiowide"
+        android:onClick="fare"
+        android:text="FARE CALCULATOR"
+        android:textAlignment="center"
+        android:textColor="#FF0000"
+        android:textSize="26dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="112dp"
+        android:layout_marginBottom="340dp"
+        android:backgroundTint="#5C000000"
+        android:fontFamily="@font/audiowide"
+        android:onClick="contact"
+        android:text="CONTACT"
+        android:textColor="#FF0000"
+        android:textSize="26dp"
+        android:textStyle="bold" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="644dp">
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="411dp"
+            android:layout_height="85dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/logo3"  />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

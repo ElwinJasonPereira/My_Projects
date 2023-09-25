@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>{% block title %}
+  {% endblock title %}</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link  rel="stylesheet" href="/static/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="/static/css/style.css" >
+{% block style %}
+{% endblock style %}
+</head>
+<body>
+  <header id="header">
+    <div class="container">
+      <div id="logo" class="pull-left">
+ <a href="/" class="scrollto">S.M.S</a>
+      </div>
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="{% block home %}
+          {% endblock home %}"><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+          {% if user.is_authenticated %}
+          <li class="buy-tickets"><a href="">Welcome</a></li>
+           <li class="buy-tickets"><a href="/logout">Logout</a></li>
+          {% else %}
+          <li class="buy-tickets"><a href="/signup">Signin</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+ {% block intro %}
+ {% endblock intro %}
+  <main id="main">
+  {% block body %}
+{% with messages=get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+<div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+    {{message}}
+</div>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+  {% endblock body %}
+  <script src="/static/jquery/jquery.min.js"></script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/zbg2"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/email1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="574dp"
+        android:ems="12"
+        android:fontFamily="@font/aldrich"
+        android:hint="Username/Email"
+        android:inputType="textEmailAddress"
+        android:textColor="#FFFB00"
+        android:textColorHint="#DAD5D5"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="79dp"
+        tools:layout_editor_absoluteY="144dp" />
+
+    <EditText
+        android:id="@+id/pass1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="469dp"
+        android:ems="12"
+        android:fontFamily="@font/aldrich"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColor="#FFFB00"
+        android:textColorHint="#DAD5D5"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="75dp"
+        tools:layout_editor_absoluteY="239dp" />
+
+    <Button
+        android:id="@+id/signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="122dp"
+        android:layout_marginBottom="295dp"
+        android:backgroundTint="#5C000000"
+        android:fontFamily="@font/audiowide"
+        android:onClick="signup"
+        android:text="SIGN UP"
+        android:textColor="#FF0000"
+        android:textSize="26dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="104dp"
+        android:layout_marginBottom="150dp"
+        android:text="Already have an account?"
+        android:textAlignment="center"
+        android:textColor="#00FF00"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/log"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="140dp"
+        android:layout_marginBottom="63dp"
+        android:backgroundTint="#5C000000"
+        android:fontFamily="@font/audiowide"
+        android:onClick="log"
+        android:text="LOGIN"
+        android:textColor="#FF0000"
+        android:textSize="26dp"
+        android:textStyle="bold" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="644dp">
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="411dp"
+            android:layout_height="85dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/logo3" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
