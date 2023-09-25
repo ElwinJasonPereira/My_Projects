@@ -1,2 +1,2 @@
 # My_Projects
- All my projects are present here
+ All of the projects developed by me are uploaded in here
