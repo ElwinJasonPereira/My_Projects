@@ -1,1 +1,1 @@
-This folder contains all the projects created by me till now
+This folder contains all the projects completed by me till now
