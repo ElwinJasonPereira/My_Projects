@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/aclonica</item>
+        <item>@font/aladin</item>
+        <item>@font/aldrich</item>
+        <item>@font/antic</item>
+        <item>@font/artifika</item>
+        <item>@font/atomic_age</item>
+        <item>@font/audiowide</item>
+        <item>@font/ewert</item>
+        <item>@font/faster_one</item>
+        <item>@font/iceberg</item>
+        <item>@font/uncial_antiqua</item>
+        <item>@font/vast_shadow</item>
+        <item>@font/vollkorn_sc_black</item>
+        <item>@font/wallpoet</item>
+        <item>@font/walter_turncoat</item>
+        <item>@font/yatra_one</item>
+    </array>
+</resources>
