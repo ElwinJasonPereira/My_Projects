@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Infant:wght@800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet">
+  <style>
+    .ch{
+      color: whitesmoke;
+      text-shadow: 0 0 5px whitesmoke, 0 0 10px whitesmoke, 0 0 20px purple, 0 0 30px purple, 0 0 40px purple, 0 0 50px purple, 0 0 60px purple;
+    }
+    #mname{
+      font-weight: bolder;
+      font-family: 'Gugi', cursive;
+      font-size: 80px;
+      margin-top: 100px;
+      margin-bottom: 100px;
+      text-align: center;
+    }
+    body {
+      background-image: url("images/bg1.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: #000;
+      color: #fff;
+      font-family:'Ysabeau Infant', sans-serif;;
+      padding-top: 50px;
+      font-size: 25px;
+    }
+    .item {
+      padding: 15px 20px;
+      font-size: 20px;
+      display: inline-block;
+      color: #ae00ff;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+      overflow: hidden;
+
+    }
+     a:hover{
+      transform: scale(1.3);
+      color: whitesmoke;
+      text-shadow: 0 0 5px red, 0 0 10px red, 0 0 30px red, 0 0 40px red;
+    }
+    .navbar-nav a{
+      text-decoration: none;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+
+    /* Header Styles */
+    .navbar {
+      background-color: #11111180;
+    }
+
+    .navbar-brand {
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* Page Styles */
+    .page-content {
+      padding: 50px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      text-shadow: 0 0 5px white, 0 0 10px red, 0 0 30px red, 0 0 40px red, 0 0 60px red, 0 0 80px purple;
+      font-size: 60px;
+      margin-top: 100px;
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 100px;
+      text-align: center;
+      color: #fff;
+    }
+
+    /* Bio Page Styles */
+    #bio p {
+      font-size: 18px;
+    }
+
+    /* Achievement Page Styles */
+    #achievement ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    .gallery{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .images{
+      width: 300px;
+      height: 300px;
+      margin: 10px;
+      overflow: hidden;
+      box-shadow: purple -5px 0px 10px;
+      position: relative;
+    }
+    .images:hover img{
+      transform: scale(1.5);
+    }
+    img{
+      width: 100%;
+      height: 100%;
+      transition: 3s;
+    }
+    form{
+      font-size: 20px;
+    }
+
+  form {
+    background-color: rgba(128, 128, 128, 0.267);
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid black;
+  }
+  label {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid gray;
+  }
+
+  textarea {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    border: 1px solid grey;
+  }
+
+  input[type="submit"] {
+    background-color: #6200ff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+
+  #server{
+    text-align: center;
+  }
+
+  #profile{
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  #img{
+    border-radius: 50%/40% 60%;
+    overflow: hidden;
+    max-width:150px;
+    max-height: 150px;
+  }
+  .footer {
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  </style>
+    <script>
+        function setPageVisitCounter() {
+        let counter = localStorage.getItem("pageVisitCounter");
+        if (counter) {
+          counter = parseInt(counter) + 1;
+        } else {
+          counter = 42;
+        }
+        localStorage.setItem("pageVisitCounter", counter);
+        document.getElementById("visit-counter").textContent = counter;
+      }
+      function updateServerTime() {
+        const serverTimeElement = document.getElementById("server-time");
+        setInterval(() => {
+          const serverTime = new Date();
+          const hours = serverTime.getHours().toString().padStart(2, '0');
+          const minutes = serverTime.getMinutes().toString().padStart(2, '0');
+          const seconds = serverTime.getSeconds().toString().padStart(2, '0');
+          serverTimeElement.textContent = `${hours}:${minutes}:${seconds}`;
+        }, 1000);
+      }
+          document.addEventListener("DOMContentLoaded", function () {
+          setPageVisitCounter();
+          updateServerTime();
+          });
+      </script>
+</head>
+
+<body>
+  <!-- Header -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <a class="navbar-brand" href="#">PORTFOLIO</a>
+      <ul class="navbar-nav ml-auto">
+        <li>
+          <a class="item" href="#bio">About Me</a>
+        </li>
+        <li>
+          <a class="item" href="#qualification">Education</a>
+        </li>
+        <li>
+          <a class="item" href="#achievements">Accomplishments</a>
+        </li>
+        <li>
+          <a class="item" href="#hobbies">Hobbies</a>
+        </li>
+        <li>
+          <a class="item" href="#photos">Photo Gallery</a>
+        </li>
+        <li>
+          <a class="item" href="#contact">Contact Me</a>
+        </li>
+      </ul>
+  </nav>
+
+  <!-- Page Content -->
+
+  <div class="page-content">
+    <div id="server">
+          <p>Page Visits: <span id="visit-counter"></span></p>
+          <p>Server Time: <span id="server-time"></span></p>
+    </div>
+
+    <div id="info">
+      <div id="mname">Name's <p class="ch">Elwin Jason Pereira</p></div>
+      <div id="profile">
+        <img id="img" src="images/profile.jpg">
+      </div>
+      <p>I am a computer science student who loves using technology to make our lives better. I have a good understanding of programming languages, data structures, and algorithms, and I enjoy working with others to solve problems.</p>
+    </div>
+
+    <div id="bio">
+        <h1>About Me</h1>
+        <p>FULL NAME : ELWIN JASON PEREIRA</p>
+        <p>EMAIL : pereiraelwin25@gmail.com</p>
+        <p>I am currently studying for my B.E degree, but I am actively seeking opportunities in software engineering, web development, or startups. If you believe I would be a good fit, please feel free to reach out to me at pereiraelwin25@gmail.com</p>
+    </div>
+
+    <div id="qualification">
+        <h1>Education</h1>
+        <p>B.Tech in Computer Science</p>
+        <ul>
+          <li>St Joseph Engineering College</li>
+          <li>CGPA : 8.3</li>
+        </ul>
+        <p>Pre University College</p>
+        <ul>
+          <li>St Raymonds PU College</li>
+          <li>Percentage : 79%</li>
+        </ul>
+        <p>SSLC</p>
+        <ul>
+          <li>St Raymonds High School</li>
+          <li>Percentage : 87%</li>
+        </ul>
+    </div>
+
+    <div id="achievements">
+        <h1>Achievements</h1>
+        <ul>
+          <li>Successfully completed internship in artificial intelligence and machine learning</li>
+          <li>Successfully finished a course on big data modelling and management system</li>
+          <li>Successfully finished a course on usable security</li>
+          <li>Successfully finished a course on software security</li>
+        </ul>
+    </div>
+
+    <div id="hobbies">
+        <h1>Hobbies</h1>
+        <ul>
+          <li>Engaging in problem-solving activities</li>
+          <li>Exploring new intrests</li>
+          <li>Reading books</li>
+          <li>Listening to music</li>
+          <li>Writing songs</li>
+          <li>Playing games</li>
+          <li>Cooking</li>
+          <li>Gardening</li>
+        </ul>
+    </div>
+
+    <div id="photos">
+        <h1>Photo Gallery</h1>
+        <div class="gallery">
+          <div class="images">
+            <img src="images/image1.png" alt="Image 1">
+          </div>
+          <div class="images">
+            <img src="images/image2.jpg" alt="Image 2">
+          </div>
+          <div class="images">
+            <img src="images/image3.jpg" alt="Image 3">
+          </div>
+          <div class="images">
+            <img src="images/image4.jpg" alt="Image 3">
+          </div>
+          <div class="images">
+            <img src="images/image5.jpg" alt="Image 3">
+          </div>
+          <div class="images">
+            <img src="images/image6.jpg" alt="Image 3">
+          </div>
+          <div class="images">
+            <img src="images/image7.jpg" alt="Image 3">
+          </div>
+          <div class="images">
+            <img src="images/image8.jpg" alt="Image 3">
+          </div>
+          <div class="images">
+            <img src="images/image9.jpg" alt="Image 3">
+          </div>
+          <div class="images">
+            <img src="images/image10.jpg" alt="Image 3">
+          </div>
+          <div class="images">
+            <img src="images/image11.jpg" alt="Image 3">
+          </div>
+          <div class="images">
+            <img src="images/image12.jpg" alt="Image 3">
+          </div>
+          <div class="images">
+            <img src="images/image13.jpg" alt="Image 3">
+          </div>
+          <div class="images">
+            <img src="images/image14.jpg" alt="Image 3">
+          </div>
+          <div class="images">
+            <img src="images/image15.jpg" alt="Image 1">
+          </div>
+          <div class="images">
+            <img src="images/image16.jpg" alt="Image 1">
+          </div>
+          <div class="images">
+            <img src="images/image17.jpg" alt="Image 1">
+          </div>
+          <div class="images">
+            <img src="images/image18.jpg" alt="Image 1">
+        </div>
+    </div>
+    <script>
+    function submit(event) {
+      event.preventDefault();
+      var form = document.getElementById("form");
+      form.style.display = "none";
+      alert("Message sent successfully!");
+    } 
+    </script>
+    <div id="contact">
+        <h1>Contact Me</h1>
+        <form id="form" onsubmit="submit(event)">
+          <label for="name">Your name:</label>
+          <input type="text" id="name" name="name" placeholder="Your name">
+          <br>
+          <label for="email">Your email address:</label>
+          <input type="email" id="email" name="email" placeholder="Your email address">
+          <br>
+          <label for="message">Your message:</label>
+          <textarea id="message" name="message" rows="10" cols="50"></textarea>
+          <br>
+          <input type="submit" value="Submit" >
+        </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
