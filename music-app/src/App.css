@@ -1,0 +1,37 @@
+@keyframes rainbowrotate {
+  0% { color: red; transform: rotate(0deg); }
+  16.666% { color: orange; transform: rotate(60deg); }
+  33.333% { color: yellow; transform: rotate(120deg); }
+  50% { color: green; transform: rotate(180deg); }
+  66.666% { color: blue; transform: rotate(240deg); }
+  83.333% { color: indigo; transform: rotate(300deg); }
+  100% { color: violet; transform: rotate(360deg); }
+}
+
+@keyframes rainbow {
+  0% { color: red; }
+  16.666% { color: orange; }
+  33.333% { color: yellow; }
+  50% { color: green; }
+  66.666% { color: blue; }
+  83.333% { color: indigo; }
+  100% { color: violet; }
+}
+
+.custom-spinner {
+  width: 5rem; 
+  height: 5rem;
+  border-width: 0.7rem;
+  animation: rainbowrotate 1s linear infinite;
+}
+
+.custom-loading-text {
+  font-size: 5rem; 
+  animation: rainbowrotate 1s linear infinite;
+}
+
+.navbar-brand{
+  animation: rainbow 5s linear infinite;
+  font-size:xx-large;
+  font-weight: bolder;
+}
