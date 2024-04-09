@@ -1,0 +1,119 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groww - Product Details</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel = "icon" href = "../images/rocket_3.gif" type = "image/x-icon"> 
+    <link rel = "stylesheet" href="../styles/navbar.css">
+    <link rel = "stylesheet" href="../styles/product_description.css">
+    <link rel="stylesheet" href="../styles/buy.css">
+    <style>
+        .invisible{
+            display:none;
+        }
+    
+    </style> 
+    <script>
+        function get(){
+            
+            check1 = JSON.parse(localStorage.getItem('companyname'));
+            check2= JSON.parse(localStorage.getItem('login'));
+            document.getElementById('name').value=check1[0];
+            document.getElementById("price").value=check1[1];
+           
+            document.getElementById('companyid').value=check1[2];
+            document.getElementById('email').value=check2[0];
+            return true;
+            
+        }
+        // window.reload();
+            check1 = JSON.parse(localStorage.getItem('companyname'));
+         
+    </script>
+</head>
+<body>
+
+    <nav class="max-w">
+        <div class="nav-div">
+            <div><a href="home.html"><img class=""
+                        src="../images/rocket_3.gif" style="border-radius: 50px;"
+                        width="168" height="60" alt="Groww Logo" itemprop="logo"></a>
+            </div>
+
+            <div class="c-search">
+                <i class="material-icons">search</i><input type="search" id="search"
+                    placeholder="What are you looking for today?" />
+            </div>
+
+            <div id="thirdBox">
+                <a href="loginpage.html"><button id="login-btn" class="dontDisplay">Login/Register</button></a></li>
+                <div id="userAcc" class="afterLogin ">
+                    <img id="user" src="https://www.shareicon.net/data/2016/05/26/771188_man_512x512.png">
+                    <a href="../php/cart1.php"><i class="material-icons">shopping_cart</i></a></li>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="logOutDropDown" class="noDropDownDisplay">
+        <div class="logout">Log Out</div>
+    </div>
+    <div id="dropDown" class="noDropDownDisplay"></div>
+
+    <div id="container">
+        
+        <div id="leftContainer">
+            <div id="titleDetails"></div>
+            <div id="graphDetails">
+                <div id="grap">
+                    <p id="company1" style="font-family:'Courier New', Courier, monospace"></p>
+                    <div class="graphDesc">
+                        <div id="percentageOne"></div>
+                        
+                        <div class="percentageDur">3Y annualised</div>
+                    </div>
+                    <div class="graphDescTwo">
+                        <div id="percentageTwo"></div>
+                        <div class="percentageDur">1D</div>
+                    </div>
+                </div>
+                <canvas id="myChart"></canvas>
+               
+                <div id="graphInterval">
+                    <div id="graphOneYear" class="onclicked" >1D</div>
+                    <div id="graphSixMonth" class="oncNotclicked">1M</div>
+                    <div id="graphOneMonth" class="onNotclicked">6M</div>
+                </div>
+         
+            <!-- </div> -->
+
+            <div class="addcart"   >
+                <form  action="../php/cart.php" method="post" style="display:flex" >
+                     <input type="text" id="name" name='name' class="invisible" value="1"></input>
+                    <input type="text" id="price"  name='price' class='invisible' value="2"></input>
+                    <input type="text" id='email' name="email" class="invisible" value=" "></input>
+                    <input type="text" id="companyid" name="companyid" class="invisible" value='2'></input>
+                <!-- <div id="goToCartBtn" type="button" action="../php/cart.php">GO TO CART</div> -->
+                <div id='goToCartBtn' ><button  type="submit" onclick=" return get()"> add to cart</button></div>
+                <div id="goToCartBtn"><a href="./sell.html">SELL</a></div>
+                <div id="goToCartBtn"><a href="./sellbuy.html">BUY</a></div></form>
+            </div>
+        </div>
+            </div>
+           
+
+
+
+    </div>
+
+</body>
+
+</html>
+<script src="../script/graph.js"></script>
+<script src="../script/search_box.js"></script>
+<script src="../script/changeNavbar.js"></script>
+

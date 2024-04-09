@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>   
+    <link rel="stylesheet" href="../styles/sellbuy.css">
+<head>
+  <script>
+    function update(){
+      check1=JSON.parse(localStorage.getItem('companyname')); 
+      check2=JSON.parse(localStorage.getItem('login'));
+      // alert(check1[0]);
+      document.getElementById('company').value=check1[0];
+      // price=parseInt(check1[1]);
+      // alert(price)
+      document.getElementById('Price').value=check1[1];
+      document.getElementById('id').value=check1[2];
+      document.getElementById('email').value=check2[0];
+      if(document.getElementById('noofstocks').value==' ' ){
+
+      return false;
+    }
+    return true;
+  }
+
+
+  </script>
+  <style>
+    #invisible{
+      display:none
+    }
+  </style>
+   <title>BUY</title>
+   </head>
+    <body>
+        <div class="container">
+            <h1>BUY</h1>
+            <form action="../php/buy.php" name="registration" class="registartion-form" method="post">
+              <table>
+                <tr>
+                  <td><label for="company name">Company name: </label></td>
+                  <td><input type="text" name="name" id="company" placeholder="Enter Name"  ></td>
+                </tr>
+                <tr id="invisible">
+                  <td><label for="price">Price: </label></td>
+                  <td><input type="text" name="id" id="id" placeholder="company id "></td>
+                </tr>
+                <tr>
+                  <td><label for="price">Price: </label></td>
+                  <td><input type="text" name="Price" id="Price" placeholder="Enter Price"></td>
+                </tr>
+                  <td><br>Delivery:<input type="radio" name="select" value="delivery"></td>
+                  <td><br>Intraday: <input type="radio" name="select" value="delivery"></td>
+                </tr>
+                <tr>
+                  <td><label for="Email"><br>USERNAME:</label></t>
+                  <td><input type="email" name="email" id="email" placeholder="Email" required></td>
+                </tr>
+                <!-- <tr>
+                  <td><label for="Limit">Limit:</label></td>
+                  <td><input type="Limit" name="Limit" id="Limit" placeholder="Enter Limit"></td>
+                </tr> -->
+                <tr>
+                  <td><label for="Balance">NO of stocks</label></td>
+                  <td><input type="Balance" name="Balance" id="noofstocks" value=" "></td>
+                </tr>
+                <tr>
+                  <td colspan="2">----------------------------------------------------</td>
+                </tr>
+                <tr>
+                  <td colspan="2"><h3><br>Order will be executed at :</h3></td>
+                </tr>
+                <tr>
+                  <td colspan="2"><input type="submit" class="submit" value="BUY" onclick=" return update()"/></td>
+                </tr>
+              </table>
+            </form>
+          </div>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+* {
+    margin: 0
+  }
+  
+  .container {
+    background-color: #dae1ed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    /* background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%); */
+  
+  }
+  
+  .container h1 {
+    color: white;
+    font-family: Serif;
+    margin: 10px;
+  }
+  
+  .registartion-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 300px;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-family: sans-serif;
+    background-color:#112c58;
+    padding:20px;
+    border-radius: 10%;
+    
+  }
+  .registartion-form input
+   {
+    border: none;
+    padding: 5px;
+    margin-top: 10px;
+    font-family: sans-serif;
+    /* border-collapse: collapse; */
+  }
+  .registartion-form .submit {
+    width: 50%;
+    padding: 8px 0;
+    font-size: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+  }
+  
+  .registartion-form .submit:hover {
+    /* background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%); */
+    box-shadow: 3px 3px 6px rgb(255, 214, 176);
+  }
