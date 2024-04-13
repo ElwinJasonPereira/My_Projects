@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+   
+    <script src="https://kit.fontawesome.com/0154fd9152.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../styles/stocksdemo.css">
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <script src="../script/search_box.js"></script>
+    <script src="../script/changeNavbar.js"></script>
+    <script>
+    function add(id1,id2,id3){
+        if(localStorage.getItem('companyname') === null){
+            localStorage.setItem('companyname', JSON.stringify([]));
+        }
+            check1 = JSON.parse(localStorage.getItem('companyname'));
+        comp=document.getElementById(id3).innerHTML
+        // alert(comp)
+            if(check1.length>0){
+                check1=[];
+            }
+ 
+            name=document.getElementById(id1).innerHTML;
+            // alert(name)
+
+            price=document.getElementById(id2).innerHTML;
+            check1.push(name);
+            check1.push(price);
+            check1.push(comp);
+                localStorage.setItem('companyname', JSON.stringify(check1));
+        
+       
+
+        }
+        function get(){
+        compid=document.getElementById('companyId1').innerHTML
+        alert(compid);
+        }
+        </script>
+    <title> stocks</title>
+</head>
+<body>
+    <nav class="max-w" >
+        <div class="nav-div">
+            <div><a href="home.html"><img class="logoclass"
+                        src="../images/rocket_3.gif" style="border-radius: 50px;"
+                        width="168" height="60" alt="Groww Logo" itemprop="logo"  ></a>
+            </div>
+
+            <div class="c-search">
+                <i class="material-icons"></i><input type="search" id="search"
+                    placeholder="What are you looking for today?" />
+            </div>
+
+            <div id="thirdBox">
+                <a href="./loginpage.html"><button id="login-btn" class="dontDisplay">Login/Register</button></a></li>
+                <div id="userAcc" class="afterLogin">
+                    <img id="user" src="https://www.shareicon.net/data/2016/05/26/771188_man_512x512.png">
+                    <a href="../php/cart1.php"><i class="material-icons">cart</i></a></li>
+                </div>
+            </div>
+        </div>
+    </nav>
+        <!-- ----------- navbar (End) ----------- -->
+        <div id="logOutDropDown" class="noDropDownDisplay">
+            <div class="logout">Log Out</div>
+        </div>
+        <div id="dropDown" class="noDropDownDisplay"></div>
+            
+
+    <div id =  'main_options'>
+        <div id = 'stocks' onclick="stocks()">
+            <p class = 'color'>Stocks</p>
+            <div id = 'bars' class = 'bar'>
+
+            </div> 
+        </div>
+        <div id = 'stocks' onclick="stocks()">
+            <p class = 'color'>Investments</p>
+            <div id = 'bars' class = 'bar'>
+
+            </div> 
+        </div>
+ 
+    </div>
+    <hr>
+
+    <div id = 'stock_div'>
+        <div id = 'stock_products'>
+            <div id = 'market_open'>
+                <p>MARKET OPENS AT 9:15 AM TOMORROW</p  >
+            </div>
+
+            </div>
+            </div>
+            <div class = 'stocks_tittle'>
+                <div>
+                    <p>Stocks in News</p>
+                </div>
+                
+                <div>
+                    <P>news</P>
+                </div>
+            </div>
+
+            <!-- stocs in news divss boxs  -->
+    
+            <div class="stocks_small_boxs" >
+                <div class="small_box">
+                    <div class="small_box_round" >
+                        <P>+</P>
+
+                    </div>
+                    <div class="small_box_image">
+                        <img src = "https://assets-netstorage.groww.in/stock-assets/logos/INE467B01029.png">
+                    </div>
+                    <a href="./product_description.html" >
+                    <div class="small_box_company_name" onclick="  add('name1','name1value','companyId1')  ">
+                        <P  id="name1">TCS</P>
+
+                    </div>
+                    </a>
+                    <p id="companyId1" class="commpanyId" style="display: none;" >10001</p>
+                    <div class="small_box_prices">
+                        <P id="name1value">3273.80</P>
+                        <p>12.10 (0.83%)</p>
+                    </div>
+                  
+
+                </div>
+
+                <div class="small_box">
+                    <div class="small_box_round">
+                        <P>+</P>
+
+                    </div>
+                    <div class="small_box_image">
+                        <img src = "https://assets-netstorage.groww.in/stock-assets/logos/INE522F01014.png">
+                    </div>
+                    <a href="./product_description.html" >
+                    <div class="small_box_company_name" onclick="add('name2','name2value','companyId2')">
+                        <P id="name2">Coal India </P>
+
+                    </div>
+                    </a>
+                    <p id="companyId2" class="commpanyId"style="display: none;" >10002</p>
+                    <div class="small_box_prices">
+                        <P id="name2value">157.15</P>
+                        <p class = 'small_box_red'>-2.20 (1.38%)</p>
+
+                    </div>
+                    
+                    
+
+                </div>
+
+                <div class="small_box">
+                    <div class="small_box_round">
+                        <P>+</P>
+
+                    </div>
+                    <div class="small_box_image">
+                        <img src = "https://assets-netstorage.groww.in/stock-assets/logos/INE075A01022.png">
+                    </div>
+                    <a href="./product_description.html" >
+                    <div class="small_box_company_name" onclick="add('name3','name3value','companyId3')">
+                        <P id="name3">Wipro</P>
+
+                    </div>
+                    </a>
+                    <p id="companyId3" class="commpanyId"style="display: none;" >10003</p>
+                    <div class="small_box_prices">
+                        <P id="name3value">557.90</P>
+                        <p class = 'small_box_red'>-3.70 (0.66%)</p>
+
+                    </div>
+                    
+                    
+
+                </div>
+
+
+                <div class="small_box">
+                    <div class="small_box_round">
+                        <P>+</P>
+
+                    </div>
+            
+                    <div class="small_box_image">
+                        <img src = "https://assets-netstorage.groww.in/stock-assets/logos/INE685A01028.png">
+                    </div>
+                    <a href="./product_description.html" >
+                    <div class="small_box_company_name" onclick="add('name4','name4value','companyId4')">
+                        <P id="name4">Regency Trust</P>
+
+                    </div>
+                    </a>
+                    <p id="companyId4" class="commpanyId" style="display: none;" >10004</p>
+                    <div class="small_box_prices">
+                        <P id="name4value">1.51</P>
+                        <p class = 'small_box_red'>-0.02 (1.31%)</p>
+
+                    </div>
+        
+                </div> 
+                
+                
+            </div>
+        </a>
+
+            <!-- top Gainers  -->
+
+            <div class = 'stocks_tittle'>
+                <div>
+                    <p>Top Gainers</p>
+
+                    <p >NIFTY100</p>
+                </div>
+                
+                <div>
+                    <P>SEE MORE</P>
+                </div>
+            </div>
+
+
+            <!-- taop gainer samll boxes -->
+
+            <div class="stocks_small_boxs">
+
+                <div class="small_box">
+                    <div class="small_box_round">
+                        <P>+</P>
+
+                    </div>
+                    <div class="small_box_image">
+                        <img src = "https://assets-netstorage.groww.in/stock-assets/logos/INE663F01024.png">
+                    </div>
+                    <a href="./product_description.html" >
+                    <div class="small_box_company_name" onclick="add('name5','name5value','companyId5')">
+                        <P id="name5">Info edge</P>
+
+                    </div>
+                    </a>
+                    <p id="companyId5" class="commpanyId" style="display: none;" >10005</p>
+                    <div class="small_box_prices">
+                        <P id="name5value">4,896.50</P>
+                        <p>212.20 (4.53%)</p>
+
+                    </div>
+                    
+
+                </div>
+                <div class="small_box">
+                    <div class="small_box_round">
+                        <P>+</P>
+
+                    </div>
+                    <div class="small_box_image">
+                        <img src = "https://assets-netstorage.groww.in/stock-assets/logos/INE271C01023.png">
+                    </div>
+                    <a href="./product_description.html" >
+                    <div class="small_box_company_name" onclick="add('name6','name6value','companyId6')">
+                        <P id="name6">DLF</P>
+
+                    </div></a>
+                    <p id="companyId6" class="commpanyId" style="display: none;">10006</p>
+                    <div class="small_box_prices">
+                        <P id="name6value">308.80</P>
+                        <p>9.60 (3.21%)</p>
+
+                    </div>
+                    
+
+                </div>
+                <div class="small_box">
+                    <div class="small_box_round">
+                        <P>+</P>
+
+                    </div>
+                    <div class="small_box_image">
+                        <img src = "https://assets-netstorage.groww.in/stock-assets/logos/INE021A01026.png">
+                    </div>
+                    <a href="./product_description.html" >
+                    <div class="small_box_company_name" onclick="add('name7','name7value','companyId7')">
+                        <P id="name7 id=name7value">Asian paints</P>
+
+                    </div>
+                    </a>
+                    <p id="companyId7" class="commpanyId" style="display: none;">10007</p>
+                    <div class="small_box_prices">
+                        <P>3,042.2</P>
+                        <p>92.30 (3.13%)</p>
+
+                    </div>
+                    
+
+                </div>
+
+                <div class="small_box">
+                    <div class="small_box_round">
+                        <P>+</P>
+
+                    </div>
+                    <div class="small_box_image">
+                        <img src = "https://assets-netstorage.groww.in/stock-assets/logos/INE192R01011.png">
+                    </div>
+                    <a href="./product_description.html" >
+                    <div class="small_box_company_name" onclick="add('name8','name8value','companyId8')">
+                        <P id="name8">Avenue</P>
+
+                    </div>
+                    </a>
+                    <p id="companyId8" class="commpanyId" style="display: none;">10008</p>
+                    <div class="small_box_prices">
+                        <P id="name8value">3,359.50</P>
+                        <p>85.40 (2.61%)</p>
+
+                    </div>
+                    
+
+                </div>
+                
+
+
+                </div>
+
+
+
+                <!-- this div is for tip losers div box  -->
+
+                <div class = 'stocks_tittle'>
+                    <div>
+                        <p>Top Losers</p>
+    
+                        <p >NIFTY100</p>
+                    </div>
+                    
+                    <div>
+                        <P>SEE MORE</P>
+                    </div>
+                </div>
+
+
+                <!-- this div is for top losser div small boxes -->
+
+
+             <div class="stocks_small_boxs">
+
+                <div class="small_box">
+                    <div class="small_box_round">
+                        <P>+</P>
+
+                    </div>
+                    <div class="small_box_image">
+                        <img src = "https://assets-netstorage.groww.in/stock-assets/logos/INE931S01010.png">
+                    </div>
+                    <a href="./product_description.html" >
+                    <div class="small_box_company_name" onclick="add('name10','name10value','companyId10')">
+                        <P id="name10">Adani</P>
+
+                    </div>
+                    </a>
+                    <p id="companyId10" class="commpanyId" style="display: none;">100010</p>
+                    <div class="small_box_prices">
+                        <P id="name10value">1,446.40</P>
+                        <p class = 'small_box_red'>-76.10 (5.00%)</p>
+
+                    </div>
+                    
+                    
+
+                </div>
+
+                <div class="small_box">
+                    <div class="small_box_round">
+                        <P>+</P>
+
+                    </div>
+                    <div class="small_box_image">
+                        <img src = "https://assets-netstorage.groww.in/stock-assets/logos/INE584A01023.png">
+                    </div>
+                    <a href="./product_description.html" >
+                    <div class="small_box_company_name" onclick="add('name11','name11value','companyId11')">
+                        <P id="name11">NMDC</P>
+
+                    </div>
+                    </a>
+                    <p id="companyId11" class="commpanyId" style="display: none;">100011</p>
+                    <div class="small_box_prices">
+                        <P id="name11value">180.90</P>
+                        <p class = 'small_box_red'>-4.90 (2.64%)</p>
+
+                    </div>
+                    
+                    
+
+                </div>
+
+                 <div class="small_box">
+                    <div class="small_box_round">
+                        <P>+</P>
+
+                    </div>
+                    <div class="small_box_image">
+                        <img src = "https://assets-netstorage.groww.in/stock-assets/logos/INE685A01028.png">
+                    </div>
+                    <a href="./product_description.html" >
+                    <div class="small_box_company_name" onclick="add('name12','name12value','companyId12')">
+                        <P id="name12">Torrent Pharma</P>
+
+                    </div>
+                    </a>
+                    <p id="companyId12" class="commpanyId"style="display: none;" >100012</p>
+                    <div class="small_box_prices">
+                        <P id="name12value">2,927.65</P>
+                        <p class = 'small_box_red'>-52.10 (1.75%)</p>
+
+                    </div>
+                    
+                    
+
+                </div>
+
+
+                <div class="small_box">
+                    <div class="small_box_round">
+                        <P>+</P>
+
+                    </div>
+                    <div class="small_box_image">
+                        <img src = "https://assets-netstorage.groww.in/stock-assets/logos/INE361B01024.png">
+                    </div>
+                    <a href="./product_description.html" >
+                    <div class="small_box_company_name" onclick="add('name13','name13value','companyId13')" >
+                        <P id="name13">Divis lab</P>
+
+                    </div>
+                    </a>
+                    <p id="companyId13" class="commpanyId"style="display: none;" >100013</p>
+                    <div class="small_box_prices">
+                        <P id="name13value">4,313.05</P>
+                        <p class = 'small_box_red'>-75.00 (1.71%)</p>
+
+                    </div>
+                    
+                    
+
+                </div>
+
+            </div>
+
+<!-- this div is for the top Sectors ----      -->
+            <div class = 'stocks_tittle'>
+                <div>
+                    <p>Top Sectors</p>
+
+                   
+                </div>
+                
+                <div>
+                    <P>SEE ALL</P>
+                </div>
+            </div>
+            <div id = 'top_sectors_div'>
+                <div class = 'top_sectors_boxes'>
+                    <p>Bankings</p>
+                    <p>|</p>
+                    <p>35</p>
+
+                </div>
+
+                <div class = 'top_sectors_boxes'>
+                    <p>Enery</p>
+                    <p>|</p>
+                    <p>84</p>
+
+                </div>
+                <div class = 'top_sectors_boxes'>
+                    <p>healthcare</p>
+                    <p>|</p>
+                    <p>180</p>
+
+                </div>
+
+
+                <div class = 'top_sectors_boxes'>
+                    <p>FMCG</p>
+                    <p>|</p>
+                    <p>182</p>
+
+                </div>
+                <div class = 'top_sectors_boxes'>
+                    <p>Automobile</p>
+                    <p>|</p>
+                    <p>118</p>
+
+                </div>
+
+                <div class = 'top_sectors_boxes'>
+                    <p>tele-Communicaton</p>
+                    <p>|</p>
+                    <p>46</p>
+
+                </div>
+
+                <div class = 'top_sectors_boxes'>
+                    <p>Media & Enterainment</p>
+                    <p>|</p>
+                    <p>87</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- this div is for the top by Market Cap --  -->
+            <div class = 'stocks_tittle'>
+                <div>
+                    <p>Top by Market Cap</p>
+
+                    <P> NIFTY100</P>
+
+                   
+                </div>
+                
+                <div>
+                    <P>SEE ALL</P>
+                </div>
+            </div>
+
+            <!-- this div is for the topmarket share div  -->
+            <div id = 'top_by_market_cap_div'>
+                <div class = 'top_box_title'>
+
+                    <div class = 'top_box_company'>
+                        <p  class="tittle_p">company</p>
+                    </div>
+
+                    <div class = 'top_box_image'>
+                        
+                    </div>
+
+                    <div class = 'top_box_price'>
+                        <p class="tittle_p">Market Price</p>
+
+                    </div>
+                    <div class = 'top_box_watchlist'>
+                       <p class="tittle_p">Watchlist</p>
+                      
+                        </div>
+
+                    </div>
+
+
+
+                    <div >
+
+                        <div class = 'top_box_company'>
+                            <a href="">Reliance Industries</a>
+                        </div>
+    
+                        <div class = 'top_box_image'>
+                            <img src = 'images/graph_red.png'>
+                            
+                        </div>
+    
+                        <div class = 'top_box_price'>
+                            <p>₹2,237.60</p>
+                            <p class= 'small_box_red'>-12.40 (0.55%)</p>
+    
+                        </div>
+                        <div class = 'top_box_watchlist'>
+                            <div class="round">
+                                <P>+</P>
+        
+                            </div>
+                          
+                            </div>
+    
+                        </div>
+
+
+                        <div >
+
+                            <div class = 'top_box_company'>
+                                <a href="">TCS</a>
+                            </div>
+        
+                            <div class = 'top_box_image'>
+                                <img src = 'images/graph.jpg'>
+                                
+                            </div>
+        
+                            <div class = 'top_box_price'>
+                                <p>₹3,254.20</p>
+                                <p class= 'small_box_green'>11.55 (0.55%)</p>
+        
+                            </div>
+                            <div class = 'top_box_watchlist'>
+                                <div class="round">
+                                    <P>+</P>
+            
+                                </div>
+                              
+                                </div>
+        
+                            </div>
+
+
+
+
+                            <div >
+
+                                <div class = 'top_box_company'>
+                                    <a href="">HDFC Bank</a>
+                                </div>
+            
+                                <div class = 'top_box_image'>
+                                    <img src = 'images/graph_red.png'>
+                                    
+                                </div>
+            
+                                <div class = 'top_box_price'>
+                                    <p>₹1,484.60</p>
+                                    <p class= 'small_box_red'>-5.65 (0.38%)</p>
+            
+                                </div>
+                                <div class = 'top_box_watchlist'>
+                                    <div class="round">
+                                        <P>+</P>
+                
+                                    </div>
+                                  
+                                    </div>
+            
+                                </div>
+
+
+
+
+
+                                <div >
+
+                                    <div class = 'top_box_company'>
+                                        <a href="">Hindustan Unilever</a>
+                                    </div>
+                
+                                    <div class = 'top_box_image'>
+                                        <img src = 'images/graph.jpg'>
+                                        
+                                    </div>
+                
+                                    <div class = 'top_box_price'>
+                                        <p>₹2,521.45</p>
+                                        <p class= 'small_box_green'>15.95 (0.67%)</p>
+                
+                                    </div>
+                                    <div class = 'top_box_watchlist'>
+                                        <div class="round">
+                                            <P>+</P>
+                    
+                                        </div>
+                                      
+                                        </div>
+                
+                                    </div>
+
+
+
+
+
+
+
+
+                                    <div >
+
+                                        <div class = 'top_box_company'>
+                                            <a href="">HDFC</a>
+                                        </div>
+                    
+                                        <div class = 'top_box_image'>
+                                            <img src = 'images/graph_red.png'>
+                                            
+                                        </div>
+                    
+                                        <div class = 'top_box_price'>
+                                            <p>₹2,521.45</p>
+                                            <p class= 'small_box_red'>-23.65 (0.93%)</p>
+                    
+                                        </div>
+                                        <div class = 'top_box_watchlist'>
+                                            <div class="round">
+                                                <P>+</P>
+                        
+                                            </div>
+                                          
+                                            </div>
+                    
+                                        </div>
+
+
+
+
+
+
+                                        <div >
+
+                                            <div class = 'top_box_company'>
+                                                <a href="">ICICI</a>
+                                            </div>
+                        
+                                            <div class = 'top_box_image'>
+                                                <img src = 'images/graph_red.png'>
+                                                
+                                            </div>
+                        
+                                            <div class = 'top_box_price'>
+                                                <p>₹640.10</p>
+                                                <p class= 'small_box_red'>-5.20 (0.81%)</p>
+                        
+                                            </div>
+                                            <div class = 'top_box_watchlist'>
+                                                <div class="round">
+                                                    <P>+</P>
+                            
+                                                </div>
+                                              
+                                                </div>
+                        
+                                            </div>
+
+
+
+
+
+
+                                            <div >
+
+                                                <div class = 'top_box_company'>
+                                                    <a href="">ITC</a>
+                                                </div>
+                            
+                                                <div class = 'top_box_image'>
+                                                    <img src = 'images/graph.jpg'>
+                                                    
+                                                </div>
+                            
+                                                <div class = 'top_box_price'>
+                                                    <p>₹207.85</p>
+                                                    <p class= 'small_box_red'>0.80 (0.39%)</p>
+                            
+                                                </div>
+                                                <div class = 'top_box_watchlist'>
+                                                    <div class="round">
+                                                        <P>+</P>
+                                
+                                                    </div>
+                                                  
+                                                    </div>
+                            
+                                                </div>
+
+
+
+
+
+
+
+                                                <div >
+
+                                                    <div class = 'top_box_company'>
+                                                        <a href="">kotak Mahindra Bank</a>
+                                                    </div>
+                                
+                                                    <div class = 'top_box_image'>
+                                                        <img src = 'images/graph_red.png'>
+                                                        
+                                                    </div>
+                                
+                                                    <div class = 'top_box_price'>
+                                                        <p>₹1,760.60</p>
+                                                        <p class= 'small_box_red'>-10.30 (0.58%)</p>
+                                
+                                                    </div>
+                                                    <div class = 'top_box_watchlist'>
+                                                        <div class="round">
+                                                            <P>+</P>
+                                    
+                                                        </div>
+                                                      
+                                                        </div>
+                                
+                                                    </div>
+
+
+
+
+
+
+                                                    <div >
+
+                                                        <div class = 'top_box_company'>
+                                                            <a href="">ifosys</a>
+                                                        </div>
+                                    
+                                                        <div class = 'top_box_image'>
+                                                            <img src = 'images/graph.jpg'>
+                                                            
+                                                        </div>
+                                    
+                                                        <div class = 'top_box_price'>
+                                                            <p>₹1,480.60</p>
+                                                            <p class= 'small_box_green'>6.70 (0.45%)</p>
+                                    
+                                                        </div>
+                                                        <div class = 'top_box_watchlist'>
+                                                            <div class="round">
+                                                                <P>+</P>
+                                        
+                                                            </div>
+                                                          
+                                                            </div>
+                                    
+                                                        </div>
+
+                                                        <div >
+
+                                                        <div class = 'top_box_company'>
+                                                            <a href="">SBI</a>
+                                                        </div>
+                                    
+                                                        <div class = 'top_box_image'>
+                                                            <img src = 'images/graph_red.png'>
+                                                            
+                                                        </div>
+                                    
+                                                        <div class = 'top_box_price'>
+                                                            <p>₹3,254.20</p>
+                                                            <p class= 'small_box_red'>-3.55 (0.83%)</p>
+                                    
+                                                        </div>
+                                                        <div class = 'top_box_watchlist'>
+                                                            <div class="round">
+                                                                <P>+</P>
+                                        
+                                                            </div>
+                                                          
+                                                            </div>
+                                    
+                                                        </div>
+            </div>
+    
+
+        
+        </div>
+        
+
+            
+       
+
+</body>
+</html>
+<script src="../script/stocksdemo.js"></script>
